@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Artist.destroy_all
+
+10.times do
+  # Faker Gem
+  artist = Artist.create(name: Faker::Games::LeagueOfLegends.unique.rank)
+  10.times do
+      artist.songs.create(name: Faker::Games::LeagueOfLegends.unique.champion)
+  end
+end

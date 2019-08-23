@@ -1,13 +1,16 @@
 <h1><h1>Billboards</h1>
 <%= link_to 'Create a new Billboard', new_billboard_path %>
-
 <br />
-
 <ul>
   <% @billboards.each do |billboard| %>
 <%= link_to billboard.name, billboard_path(billboard) %>
 <br />
+
+
+
   
   <% end %>
+  <br />
+  <%= link_to 'Billboard Page', root_path %>
 </ul></h1>
 
